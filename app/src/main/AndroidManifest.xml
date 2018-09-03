@@ -16,6 +16,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".multiProcess.FirstActivity"
+            android:configChanges="screenLayout"
+            android:label="@string/app_name" />
+        <!--未指定process属性，默认进程com.duyangs.ipc-->
+
+        <activity
+            android:name=".multiProcess.SecondActivity"
+            android:configChanges="screenLayout"
+            android:label="@string/app_name"
+            android:process=":ximimax" />
+        <!--指定process属性，运行时创建独立进程com.duyangs.ipc:ximimax-->
+
+        <activity
+            android:name=".multiProcess.ThirdActivity"
+            android:configChanges="screenLayout"
+            android:label="@string/app_name"
+            android:process="com.duyangs.ipc.ximimax" />
+        <!--指定process属性，运行时创建独立进程com.duyangs.ipc.ximimax-->
     </application>
 
 </manifest>
